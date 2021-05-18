@@ -32,6 +32,6 @@ describe('Login Test', () => {
         cy.get(LoginPage.emailField).clear().type('asdasd@gmail.com');
         cy.get(LoginPage.passwordField).clear().type('asdasda');
         cy.get(LoginPage.signInButton).click();
-        cy.get(LoginPage.updatePopUp).should('contain', 'Hmm...')
+        cy.get(LoginPage.updatePopUp).should('contain', 'Hmm...');
     })
 })
