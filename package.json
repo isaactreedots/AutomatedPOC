@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "test-open": "cypress open",
+    "test-ui": "cypress run --browser chrome --spec 'cypress/integration/ui_tests/*'",
+    "test-api": "cypress run --headless --spec 'cypress/integration/api_tests/*'"
+  },
   "devDependencies": {
     "cypress": "^7.3.0"
   }
