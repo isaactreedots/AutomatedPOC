@@ -8,7 +8,7 @@ The framework is based on Cypress
 It is used both for UI and API test automation. The tests are also stored in this repository.
 
 Running tests
-$ yarn test
+$ yarn test-open
 $ yarn test-ui
 $ yarn test-api
 
