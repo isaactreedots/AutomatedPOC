@@ -1,4 +1,16 @@
 {
     "baseUrl": "https://gqlapi-test.thetreedots.com/graphql",
-    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1"
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1",
+    "video": false,
+    "defaultCommandTimeout": 20000,
+    "execTimeout": 30000,
+    "taskTimeout": 30000,
+    "pageLoadTimeout": 20000,
+    "requestTimeout": 20000,
+    "responseTimeout": 20000,
+    "chromeWebSecurity": false,
+    "retries": {
+        "runMode": 2,
+        "openMode": 0
+    }
 }

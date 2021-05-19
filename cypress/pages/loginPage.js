@@ -7,6 +7,8 @@ class LoginPage {
     static passwordField = '.txt-password';
     static signInButton = '[data-cy=btnLogin] > .q-btn__wrapper > .q-btn__content';
     static homeMenu = '[data-cy=Home] > .q-tab__content > .q-tab__icon';
+    static emptyEmailNotification = 'Please provide your username';
+    static emptyPasswordNotification = 'Please provide your password';
 }
 
 export default LoginPage;

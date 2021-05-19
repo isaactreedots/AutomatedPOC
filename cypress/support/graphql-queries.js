@@ -10,3 +10,17 @@ query allCountries {
     }
 }`;
 
+export const allMenus = `
+query allMenus {
+    allMenus {
+        active,
+        description,
+        icon,
+        id,
+        label,
+        menu_id,
+        name,
+        to,
+    }
+}`;
+

@@ -1,11 +1,17 @@
-import { allCountries } from '../../support/graphql-queries';
+import { allCountries, allMenus } from '../../support/graphql-queries';
 
 describe('GraphQL Requests', () => {
-    it('Test 2nd', () => {
+    it('Fetch All countries', () => {
         cy.requestGraphQl(allCountries).then(response => {
             expect(response.status).to.be.eq(200);
+            expect(response.body.data.allCountries).to.have.lengthOf('240')
             expect(response.body.data.allCountries[0].name).to.be.eq('AF');
-            // expect(response.body.data.allCountries[9].name).to.be.eq('');
+        });
+    });
+
+    it('Fetch All menus', () => {
+        cy.requestGraphQl(allMenus).then(response => {
+            expect(response.status).to.be.eq(200);
         });
     });
 });
