@@ -1,7 +1,7 @@
 # AutomatedPOC
 
 ## Test Automation
-This repository contains a Test Automation Framework with UI and API tests for Portal
+This repository contains a Test Automation Framework with UI and API tests
 
 ## Description
 The framework is based on Cypress
