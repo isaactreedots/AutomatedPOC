@@ -7,6 +7,11 @@ This repository contains a Test Automation Framework with UI and API tests for P
 The framework is based on Cypress
 It is used both for UI and API test automation. The tests are also stored in this repository.
 
+## Installation
+```
+$ yarn install
+```
+
 ## Running tests
 ```
 $ yarn test-open
