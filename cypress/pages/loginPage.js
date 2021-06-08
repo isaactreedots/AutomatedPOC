@@ -6,6 +6,7 @@ class LoginPage {
     static signInWithMobilePhoneBtn = '.btnPhone';
     static countryDropdown = '.vti__selection';
     static indonesiaCountry = 'Indonesia'; //text selector
+    static americaCountry = 'United States'; //text selector for OTP
     static mobilePhoneField = '.vti__input';
     static loginWithPhone = '.q-tab--inactive > .q-tab__content > .q-tab__icon';
     static emailField = '.txt-username';
@@ -15,6 +16,7 @@ class LoginPage {
     static emptyEmailNotification = 'Please provide your username';
     static emptyPasswordNotification = 'Please provide your password';
     static signUp = 'Sign Up' //text selector
+    static signInWithOTP = '[data-cy=btnPhone] > .q-btn__wrapper > .q-btn__content';
 }
 
 export default LoginPage;
