@@ -60,4 +60,5 @@ describe('Login Test', () => {
         cy.contains(LoginPage.emptyEmailNotification).should('be.visible');
         cy.contains(LoginPage.emptyPasswordNotification).should('be.visible');
     });
+
 });

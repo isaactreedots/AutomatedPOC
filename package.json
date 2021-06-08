@@ -5,6 +5,10 @@
     "test-api": "cypress run --headless --spec 'cypress/integration/api_tests/*'"
   },
   "devDependencies": {
-    "cypress": "^7.3.0"
+    "cypress": "^7.4.0",
+    "cypress-otp": "^1.0.3"
+  },
+  "dependencies": {
+    "twilio": "^3.63.0"
   }
 }
