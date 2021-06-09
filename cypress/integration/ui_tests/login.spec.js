@@ -3,10 +3,6 @@ import HomePage from '../../pages/homePage';
 import AccountPage from '../../pages/accountPage';
 import UiScenario from '../../components/ui_scenarios';
 
-const accountSid = 'AC24418897b5b19c35faa72ccf24beeb4a';
-const authToken = '8d85f1bdd3c653a1011e9db33d71e4c7';
-const client = require('twilio')(accountSid, authToken);
-
 describe('Login Test', () => {
     beforeEach(function () {
         cy.fixture('user').then(function (user) {
