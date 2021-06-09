@@ -1,5 +1,5 @@
 class HomePage {
-    static homeMenu = '[data-cy=Home]'
+    static homeMenu = '[data-cy=Home]';
     static accountMenu = '[data-cy=Account]';
     static browseMenu = '[data-cy=Browse]';
     static ordersMenu = '[data-cy=Orders]';

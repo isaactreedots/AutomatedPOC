@@ -17,7 +17,7 @@ class LoginPage {
     static emptyEmailNotification = 'Please provide your username';
     static emptyPasswordNotification = 'Please provide your password';
     static signUp = 'Sign Up'; //text selector
-    static numberNotExistPopUp = '.q-dialog__inner > .column'
+    static numberNotExistPopUp = '.q-dialog__inner > .column';
 }
 
 export default LoginPage;

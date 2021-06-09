@@ -81,7 +81,7 @@ describe('Login Test', () => {
             const s = /\d+/g;
             const match = message.match(s);
             const otp = match[0]
-            cy.log(otp)
+            cy.log(otp);
             cy.get(LoginPage.otpCode).type(otp);
         });
         });
