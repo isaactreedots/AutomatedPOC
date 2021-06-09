@@ -3,5 +3,7 @@
   "password": "12345678",
   "invalidEmail": "asdasd@gmail.com",
   "invalidPassword": "asdasd",
-  "phone": "0812221111"
+  "phone": "0812221111",
+  "phone2": "7035469408",
+  "incorrectOtp": "0000"
 }

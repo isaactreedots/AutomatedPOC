@@ -2,7 +2,10 @@ import LoginPage from '../../pages/loginPage';
 import HomePage from '../../pages/homePage';
 import AccountPage from '../../pages/accountPage';
 import UiScenario from '../../components/ui_scenarios';
-import user from '../../fixtures/user.json';
+
+const accountSid = 'AC24418897b5b19c35faa72ccf24beeb4a';
+const authToken = '8d85f1bdd3c653a1011e9db33d71e4c7';
+const client = require('twilio')(accountSid, authToken);
 
 describe('Login Test', () => {
     beforeEach(function () {
@@ -59,5 +62,54 @@ describe('Login Test', () => {
         cy.get(LoginPage.emailField).click();
         cy.contains(LoginPage.emptyEmailNotification).should('be.visible');
         cy.contains(LoginPage.emptyPasswordNotification).should('be.visible');
+    });
+
+    it('Login using OTP', function () {
+        cy.get(LoginPage.updatePopUp).get(LoginPage.okUpdatePopUp).click();
+        cy.get(LoginPage.skipButton).click({force: true});
+        cy.get(LoginPage.signInWithMobilePhoneBtn).click({force: true});
+        cy.get(LoginPage.countryDropdown).click();
+        cy.contains(LoginPage.unitedStatesCountry).click();
+        cy.get(LoginPage.mobilePhoneField).type(this.user.phone2);
+        cy.get(LoginPage.signInButton).click();
+        cy.wait(10000);
+        cy.request({
+            method: 'GET',
+            url: Cypress.env('twilioUrl'),
+            auth: {
+                    username: Cypress.env('username'),
+                    password: Cypress.env('password')
+                }
+        }).then((response) => {
+            const message = response.body.messages[0].body;
+            const s = /\d+/g;
+            const match = message.match(s);
+            const otp = match[0]
+            cy.log(otp)
+            cy.get(LoginPage.otpCode).type(otp);
+        });
+        });
+
+    it('Login using OTP and fill incorrect OTP code', function () {
+        cy.get(LoginPage.updatePopUp).get(LoginPage.okUpdatePopUp).click();
+        cy.get(LoginPage.skipButton).click({force: true});
+        cy.get(LoginPage.signInWithMobilePhoneBtn).click({force: true});
+        cy.get(LoginPage.countryDropdown).click();
+        cy.contains(LoginPage.unitedStatesCountry).click();
+        cy.get(LoginPage.mobilePhoneField).type(this.user.phone2);
+        cy.get(LoginPage.signInButton).click();
+        cy.get(LoginPage.otpCode).type(this.user.incorrectOtp);
+        cy.get(LoginPage.updatePopUp).should('be.exist').contains('Failed');
+    });
+
+    it('Login using OTP with incorrect phone number', function () {
+        cy.get(LoginPage.updatePopUp).get(LoginPage.okUpdatePopUp).click();
+        cy.get(LoginPage.skipButton).click({force: true});
+        cy.get(LoginPage.signInWithMobilePhoneBtn).click({force: true});
+        cy.get(LoginPage.countryDropdown).click();
+        cy.contains(LoginPage.unitedStatesCountry).click();
+        cy.get(LoginPage.mobilePhoneField).type('839427292');
+        cy.get(LoginPage.signInButton).click();
+        cy.get(LoginPage.numberNotExistPopUp).should('be.exist').contains('You do not have an account with us.');
     });
 });

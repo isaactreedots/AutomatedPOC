@@ -3,9 +3,11 @@ class LoginPage {
     static okUpdatePopUp = '[data-cy=alert-button] > .q-btn__wrapper > .q-btn__content';
     static skipButton = '[data-cy=btnSkip] > .q-btn__wrapper > .q-btn__content > .block';
     static signInWithPasswordBtn = '[data-cy=btnEmail] > .q-btn__wrapper > .q-btn__content';
-    static signInWithMobilePhoneBtn = '.btnPhone';
+    static signInWithMobilePhoneBtn = '[data-cy=btnPhone] > .q-btn__wrapper > .q-btn__content';
     static countryDropdown = '.vti__selection';
     static indonesiaCountry = 'Indonesia'; //text selector
+    static unitedStatesCountry = 'United States';
+    static otpCode = '#otp_code_1';
     static mobilePhoneField = '.vti__input';
     static loginWithPhone = '.q-tab--inactive > .q-tab__content > .q-tab__icon';
     static emailField = '.txt-username';
@@ -14,7 +16,8 @@ class LoginPage {
     static homeMenu = '[data-cy=Home] > .q-tab__content > .q-tab__icon';
     static emptyEmailNotification = 'Please provide your username';
     static emptyPasswordNotification = 'Please provide your password';
-    static signUp = 'Sign Up' //text selector
+    static signUp = 'Sign Up'; //text selector
+    static numberNotExistPopUp = '.q-dialog__inner > .column'
 }
 
 export default LoginPage;
