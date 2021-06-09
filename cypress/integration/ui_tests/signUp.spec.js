@@ -5,9 +5,6 @@ describe('Login Test', () => {
     beforeEach(function () {
         cy.viewport('iphone-6');
         cy.visit('https://test.thetreedots.com/');
-    });
-
-    afterEach(() => {
         try {
             cy.clearLocalStorage();
             cy.clearCookies();

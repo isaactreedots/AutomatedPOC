@@ -12,5 +12,10 @@
     "retries": {
         "runMode": 2,
         "openMode": 0
+    },
+    "env": {
+        "twilioUrl": "https://api.twilio.com/2010-04-01/Accounts/AC24418897b5b19c35faa72ccf24beeb4a/Messages.json",
+        "username": "AC24418897b5b19c35faa72ccf24beeb4a",
+        "password": "8d85f1bdd3c653a1011e9db33d71e4c7"
     }
 }
