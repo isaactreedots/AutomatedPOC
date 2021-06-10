@@ -1,5 +1,5 @@
 class BrowsePage {
-    static category = '.hooper-list';
+    static category = '.hooper-track';
     static menuSubCategory = '.scroll-in-block';
     static subCategoryAll = '.sub-selected';
 

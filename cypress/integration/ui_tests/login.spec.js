@@ -21,7 +21,7 @@ describe('Login Test', () => {
     });
 
     it('Login with password - email', function () {
-        UiScenario.login(this.user.email, this.user.password);
+        UiScenario.login(this.user.emailMY, this.user.password);
         cy.get(HomePage.accountMenu).should('exist');
     });
 
@@ -43,7 +43,7 @@ describe('Login Test', () => {
     });
 
     it('Login and logout succesfully', function () {
-        UiScenario.login(this.user.email, this.user.password);
+        UiScenario.login(this.user.emailMY, this.user.password);
         cy.get(HomePage.accountMenu).should('exist');
         cy.get(HomePage.accountMenu).click();
         cy.get(AccountPage.signOut).click();
